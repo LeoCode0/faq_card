@@ -29,8 +29,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 900px;
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
   background: linear-gradient(var(--bg-violet), var(--bg-blue));
 }
 
@@ -43,13 +43,14 @@ body {
   border-radius: 20px;
   padding: 20px;
   position: relative;
-  margin-top: 125px;
+  margin: 80px 0 40px;
 }
 
 .card__header {
   margin: -125px 0 0 8px;
   width: 300px;
-  right: 25px;
+  background: url("../images/bg-pattern-mobile.svg") no-repeat;
+  background-position: 25px 100px;
 }
 
 .card__title {
@@ -112,4 +113,54 @@ body {
 
 .strong {
   font-weight: 700;
+}
+
+.box-desktop {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .card__title {
+    margin: 0;
+    padding: 20px 0;
+  }
+
+  .card {
+    width: 80%;
+    max-width: 1024px;
+    align-items: center;
+    position: relative;
+    justify-content: flex-end;
+  }
+
+  .card__header {
+    position: absolute;
+    margin: 0;
+    left: -5%;
+    top: 300px;
+    transform: translateY(-200px);
+    background: url("../images/bg-pattern-desktop.svg") no-repeat cover;
+    background-size: 400px;
+    background-position: -10px 210px;
+    height: 100%;
+    width: 400px;
+  }
+
+  .card__image img {
+    height: 301px;
+  }
+
+  .card__body {
+    width: 50%;
+    margin-right: 50px;
+  }
+
+  .box-desktop {
+    display: block;
+    position: absolute;
+    top: 125px;
+    left: 30px;
+    height: 20vh;
+    max-height: 120px;
+  }
 }
